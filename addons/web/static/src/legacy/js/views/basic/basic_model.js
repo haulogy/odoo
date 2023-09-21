@@ -2442,7 +2442,7 @@ var BasicModel = AbstractModel.extend({
     _evalModifiers: function (element, modifiers) {
         let evalContext = null;
         const evaluated = {};
-        for (const k of ['invisible', 'column_invisible', 'readonly', 'required']) {
+        for (const k of ['invisible', 'column_invisible', 'readonly', 'required', 'required_closing']) {
             const mod = modifiers[k];
             if (mod === undefined || mod === false || mod === true) {
                 if (k in modifiers) {

@@ -341,6 +341,7 @@ var BasicRenderer = AbstractRenderer.extend(WidgetAdapterMixin, {
             element.$el.toggleClass("o_invisible_modifier", !!modifiers.invisible);
             element.$el.toggleClass("o_readonly_modifier", !!modifiers.readonly);
             element.$el.toggleClass("o_required_modifier", !!modifiers.required);
+            element.$el.toggleClass("opt_required", !!modifiers.required_closing);
 
             if (element.widget && element.widget.updateModifiersValue) {
                 element.widget.updateModifiersValue(modifiers);
