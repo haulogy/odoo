@@ -11,7 +11,7 @@ import re
 import sys
 import warnings
 from os.path import join as opj
-
+import functools
 import odoo
 import odoo.tools as tools
 import odoo.release as release
@@ -157,7 +157,7 @@ def initialize_sys_path():
         sys.meta_path.insert(0, AddonsHook())
         initialize_sys_path.called = True
 
-
+@functools.lru_cache(maxsize=None)
 def get_module_path(module, downloaded=False, display_warning=True):
     """Return the path of the given module.
 
